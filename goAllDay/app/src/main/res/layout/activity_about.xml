@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context="br.com.goallday.goallday.AboutActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Desenvolvedores"
+            android:textSize="10pt"
+            android:id="@+id/textView_titulo"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#00A859" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="André L. Santini"
+            android:textSize="12pt"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="10dp"
+            android:textColor="#2E3092" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Felipe M. Duarte"
+            android:textSize="12pt"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#2E3092" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Thiago M. da Cruz"
+            android:textSize="12pt"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#2E3092" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Renato A. Alecrim"
+            android:textSize="12pt"
+            android:id="@+id/textView"
+            android:layout_gravity="center_horizontal"
+            android:textColor="#2E3092" />
+    </LinearLayout>
+
+</RelativeLayout>
