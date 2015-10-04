@@ -16,12 +16,13 @@ import android.widget.ListView;
 
 
 import java.lang.reflect.Array;
+import java.sql.SQLData;
 import java.util.ArrayList;
 import java.util.Locale;
 
 
 public class MainActivity extends ActionBarActivity {
-    SQLiteDatabase meuBanco;
+    public SQLiteDatabase meuBanco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +35,65 @@ public class MainActivity extends ActionBarActivity {
         meuBanco.execSQL(criaTabelaMeta);
 
         ImageView minhasMetas = (ImageView)findViewById(R.id.minhas_metas);
+        ImageView novaMeta = (ImageView)findViewById(R.id.nova_meta);
+        ImageView compartilhar = (ImageView)findViewById(R.id.compartilhar);
+        ImageView sobre = (ImageView)findViewById(R.id.sobre);
 
         minhasMetas.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent  minhasMetasIntent = new Intent(this, minhasMetas_Activity.class);
+                Intent  minhasMetasIntent = new Intent(getBaseContext(), minhasMetas_Activity.class);
                 startActivity(minhasMetasIntent);
             }
         });
 
+        novaMeta.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent  minhasMetasIntent = new Intent(getBaseContext(), minhasMetas_Activity.class);
+                startActivity(minhasMetasIntent);
+            }
+        });
 
+        compartilhar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent  minhasMetasIntent = new Intent(getBaseContext(), minhasMetas_Activity.class);
+                startActivity(minhasMetasIntent);
+            }
+        });
+
+        sobre.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent  minhasMetasIntent = new Intent(getBaseContext(), AboutActivity.class);
+                startActivity(minhasMetasIntent);
+            }
+        });
+
+    }
+
+    public Cursor ExecutaSqlBusca(String nomeTablela,String[] colunas,String condicao){
+        Cursor cursor = meuBanco.query(nomeTablela, colunas, condicao, null, null, null, null);
+        return  cursor;
+    }
+
+    public long ExecutaSqlInsert(ContentValues values,String tabela){
+        return  meuBanco.insert(tabela,null,values);
+    }
+
+    public long ExecutaSqlUpdate(ContentValues values,String tabela,String where){
+        return  meuBanco.update(tabela, values, where, null);
+    }
+
+    public long ExecutaSqlDelete(String tabela,String where){
+        return  meuBanco.delete(tabela,where, null);
+    }
+
+
+
+    public  SQLiteDatabase getDb(){
+        return meuBanco;
     }
 
     @Override
@@ -53,9 +103,7 @@ public class MainActivity extends ActionBarActivity {
         return true;
     }
 
-    public static SQLiteDatabase getDb(){
-        return meuBanco;
-    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
