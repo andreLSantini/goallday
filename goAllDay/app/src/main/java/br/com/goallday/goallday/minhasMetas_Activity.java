@@ -56,7 +56,7 @@ public class minhasMetas_Activity extends ActionBarActivity {
     }
     public void listarMetas(){
         final ListView listView = (ListView) findViewById(R.id.listView_metas);
-        Cursor c = myDb.query("metas",null,null,null,null,null,null);
+        Cursor c = meuBanco.query("metas",null,null,null,null,null,null);
         ArrayList<String> arrayContatos = new ArrayList<>();
         while (c.moveToNext()){
             String nomeDoBanco = c.getString(c.getColumnIndex("nome"));
