@@ -20,7 +20,8 @@ public class minhasMetas_Activity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minhas_metas_);
-        meuBanco = MainActivity.getDb();
+        meuBanco = openOrCreateDatabase("goallday.db",SQLiteDatabase.CREATE_IF_NECESSARY,null);
+        listarMetas();
     }
 
 
@@ -52,6 +53,23 @@ public class minhasMetas_Activity extends ActionBarActivity {
             }
         });
 
+    }
+    public void listarMetas(){
+        final ListView listView = (ListView) findViewById(R.id.listView_metas);
+        Cursor c = myDb.query("metas",null,null,null,null,null,null);
+        ArrayList<String> arrayContatos = new ArrayList<>();
+        while (c.moveToNext()){
+            String nomeDoBanco = c.getString(c.getColumnIndex("nome"));
+            arrayContatos.add(nomeDoBanco);
+        }
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, android.R.id.text1, arrayContatos);
+        listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                String nome = listView.getItemAtPosition(position).toString();
+            }
+        });
     }
 
     @Override
