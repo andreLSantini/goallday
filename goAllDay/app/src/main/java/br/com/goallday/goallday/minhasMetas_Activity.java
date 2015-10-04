@@ -20,7 +20,8 @@ public class minhasMetas_Activity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_minhas_metas_);
-        meuBanco = MainActivity.getDb();
+        MainActivity mainActivity = new MainActivity();
+        meuBanco = mainActivity.getDb();
     }
 
 
