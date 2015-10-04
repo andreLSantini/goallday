@@ -5,6 +5,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
 
 import java.util.Locale;
 
@@ -21,6 +23,16 @@ public class MainActivity extends ActionBarActivity {
         meuBanco.setLocale(Locale.getDefault());
         String criaTabelaMeta = "CREATE TABLE IF NOT EXISTS metas (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, hora INTEGER,previsao TEXT, data INTEGER,tempo REAL)";
         meuBanco.execSQL(criaTabelaMeta);
+
+        ImageView minhasMetas = (ImageView)findViewById(R.id.minhas_metas);
+        minhasMetas.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent minhasMetasIntent = new (this,minhasMetas_Activity.java);
+            }
+        });
+
+
     }
 
 

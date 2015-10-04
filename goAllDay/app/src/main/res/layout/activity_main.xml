@@ -77,7 +77,7 @@
                     <ImageView
                         android:layout_width="60dp"
                         android:layout_height="60dp"
-                        android:id="@+id/imageView2"
+                        android:id="@+id/minhas_metas"
                         android:src="@mipmap/ascendant6"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="20dp" />
