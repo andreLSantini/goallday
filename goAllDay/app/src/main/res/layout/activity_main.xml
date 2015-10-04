@@ -3,41 +3,154 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:orientation="vertical"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-
-        <FrameLayout
-            android:layout_width="130dp"
-            android:layout_height="130dp"
-            android:foreground="@mipmap/img_coracao"
-            android:foregroundGravity="center|fill_horizontal|center_vertical|center_horizontal|clip_horizontal|fill|bottom|clip_vertical|left|right|fill_vertical|top"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="30dp"></FrameLayout>
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/scrollView"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@mipmap/fundo">
 
         <LinearLayout
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:weightSum="1">
+            android:layout_height="fill_parent">
 
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="110dp"
-                android:id="@+id/imageView"
-                android:src="@mipmap/man19"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="50dp" />
-
-            <ImageView
-                android:layout_width="100dp"
-                android:layout_height="110dp"
-                android:id="@+id/imageView2"
-                android:src="@mipmap/ascendant6"
-                android:layout_marginLeft="50dp"
+                android:layout_width="300dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageView3"
+                android:background="@mipmap/goallday1"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp" />
-        </LinearLayout>
 
-    </LinearLayout>
+            <FrameLayout
+                android:layout_width="110dp"
+                android:layout_height="105dp"
+                android:foreground="@mipmap/img_coracao"
+                android:foregroundGravity="center|fill_horizontal|center_vertical|center_horizontal|clip_horizontal|fill|bottom|clip_vertical|left|right|fill_vertical|top"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="30dp"></FrameLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1"
+                    android:layout_marginLeft="50dp">
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/imageView"
+                        android:src="@mipmap/man19"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Nova Meta"
+                        android:id="@+id/textView"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1"
+                    android:layout_marginLeft="60dp" >
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/imageView2"
+                        android:src="@mipmap/ascendant6"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Minhas Metas"
+                        android:id="@+id/textView2"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:weightSum="1"
+                android:layout_marginTop="20dp">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1"
+                    android:layout_marginLeft="50dp" >
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/imageView5"
+                        android:src="@mipmap/icone1_curtir"
+                        android:layout_gravity="center_horizontal"
+                        android:layout_marginTop="20dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Compartilhar Metas"
+                        android:id="@+id/textView3"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:weightSum="1"
+                    android:layout_marginLeft="60dp" >
+
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/imageView4"
+                        android:src="@mipmap/info1"
+                        android:layout_marginTop="20dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Sobre"
+                        android:id="@+id/textView4"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20dp"
+                        android:layout_gravity="center_horizontal" />
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 </RelativeLayout>

@@ -1,17 +1,26 @@
 package br.com.goallday.goallday;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.Locale;
+
 
 public class MainActivity extends ActionBarActivity {
+    SQLiteDatabase meuBanco;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        meuBanco = openOrCreateDatabase( "goallday.db", SQLiteDatabase.CREATE_IF_NECESSARY,null);
+        meuBanco.setVersion(1);
+        meuBanco.setLocale(Locale.getDefault());
+        String criaTabelaMeta = "CREATE TABLE IF NOT EXISTS metas (id INTEGER PRIMARY KEY AUTOINCREMENT, nome TEXT, hora INTEGER,previsao TEXT, data INTEGER,tempo REAL)";
+        meuBanco.execSQL(criaTabelaMeta);
     }
 
 
