@@ -20,11 +20,16 @@
         </activity>
         <activity
             android:name=".AboutActivity"
-            android:label="@string/title_activity_about" >
+            android:label="@string/title_activity_about"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation">
+
         </activity>
         <activity
             android:name=".minhasMetas_Activity"
-            android:label="@string/title_activity_minhas_metas_" >
+            android:label="@string/title_activity_minhas_metas_"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation">
         </activity>
 
     </application>

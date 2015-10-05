@@ -1,5 +1,6 @@
 package br.com.goallday.goallday;
 
+import android.content.ContentValues;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.ActionBarActivity;
@@ -54,7 +55,15 @@ public class minhasMetas_Activity extends ActionBarActivity {
         });
 
     }
+
     public void listarMetas(){
+/*        ContentValues values = new ContentValues();
+        values.put("nome","Ler");
+        values.put("hora",10);
+        values.put("previsao","MENSAL");
+        values.put("data",10122015);
+        values.put("tempo",8);
+        meuBanco.insert("metas","",values);*/
         final ListView listView = (ListView) findViewById(R.id.listView_metas);
         Cursor c = meuBanco.query("metas",null,null,null,null,null,null);
         ArrayList<String> arrayContatos = new ArrayList<>();
